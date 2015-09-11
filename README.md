@@ -3,9 +3,9 @@ Makes a layer draggable and constrains its „draggability“ to a defined circl
 
 #### Demo
 
-![Video](http://giphy.com/gifs/26BkNVMxvNBO6RluM/html5)
+![gif](http://i.giphy.com/3oEduEH7JgcM3Jh8sM.gif)
 
-![Live Demo](http://share.framerjs.com/z37yx6kb4mb7/)
+*Link*: http://share.framerjs.com/z37yx6kb4mb7/)
 
 #### Getting started
 
