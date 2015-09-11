@@ -12,6 +12,8 @@ Makes a layer draggable and constrains its „draggability“ to a defined circl
 #### Getting started
 
 ```CoffeeScript
+# Copy ‚constrainToCircle.coffee‘ into your projects ‚modules‘-folder
+
 # Include module
 constrainToCircle = require „constrainToCircle“
 
