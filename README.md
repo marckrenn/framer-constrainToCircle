@@ -1,5 +1,5 @@
 ## framer-constrainToCircle
-‚constrainToCircle‘ is a module that enables dragging for ‚layer‘ and constrains its movement to a circle.
+‚constrainToCircle‘ is a module that enables dragging for a layer and constrains its movement to a circle.
 
 
 #### Demo
