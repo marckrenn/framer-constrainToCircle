@@ -1,5 +1,5 @@
 ## framer-constrainToCircle
-Makes a layer draggable and constrains its „draggability“ to a defined circle.
+constrainToCircle is a module that enables dragging for ‚layer‘ and constrains its movement to a circle
 
 
 #### Demo
@@ -12,7 +12,7 @@ Makes a layer draggable and constrains its „draggability“ to a defined circl
 #### Getting started
 
 ```CoffeeScript
-# Copy ‚constrainToCircle.coffee‘ into your projects ‚modules‘-folder
+# Copy ‚constrainToCircle.coffee’ into your project’s ‚modules‘-folder
 
 # Include module
 constrainToCircle = require „constrainToCircle“
