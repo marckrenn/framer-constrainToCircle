@@ -25,4 +25,10 @@ constrainToCircle.update(layer,circleCenterX,circleCenterY,radius)
 
 # disables dragging for ‚layer‘
 constrainToCircle.disable(layer)
+
+# variables: values from the invisible ‚helper’-layer
+constrainToCircle.isDragging # returns true/false
+constrainToCircle.velocityX # returns float
+constrainToCircle.velocityY # returns float
+
 ```

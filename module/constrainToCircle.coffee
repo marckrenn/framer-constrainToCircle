@@ -21,7 +21,11 @@ exports.enable = (layer,circleCenterX,circleCenterY,radius) ->
     helper.index = layer.index + 1
     helper.draggable.enabled = true
     helper.draggable.momentum = false
-    exports.helper = helper
+    
+    exports.helper = helper  
+    exports.isDragging = false
+    exports.velocityX = 0
+    exports.velocityY = 0
                 
     helper.on Events.DragStart, ->
         
@@ -29,10 +33,15 @@ exports.enable = (layer,circleCenterX,circleCenterY,radius) ->
         layer.animateStop()
         
         layer.emit Events.DragStart
+        exports.isDragging = true
                            
     helper.on Events.DragMove, ->
-
+               
         layer.emit Events.DragMove
+        
+        exports.velocityX = helper.draggable.velocity.x
+        exports.velocityY = helper.draggable.velocity.y
+        exports.isDragging = true
         
         d = (helper.x - circleCenterX) ** 2 + (helper.y - circleCenterY) ** 2
                 
@@ -53,6 +62,10 @@ exports.enable = (layer,circleCenterX,circleCenterY,radius) ->
     helper.on Events.DragEnd, ->
         
         layer.emit Events.DragEnd
+        
+        exports.isDragging = false
+        exports.velocityX = 0
+        exports.velocityY = 0
         
         helper.x = layer.x
         helper.y = layer.y
