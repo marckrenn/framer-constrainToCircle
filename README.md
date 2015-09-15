@@ -30,5 +30,6 @@ constrainToCircle.disable(layer)
 constrainToCircle.isDragging # returns true/false
 constrainToCircle.velocityX # returns float
 constrainToCircle.velocityY # returns float
+constrainToCircle.helper # returns ‚helper‘-layer
 
 ```

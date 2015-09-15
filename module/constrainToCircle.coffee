@@ -18,7 +18,7 @@ exports.enable = (layer,circleCenterX,circleCenterY,radius) ->
     helper = layer.copy()
     helper.name = "circleConstraintHelper"
     helper.opacity = 0
-    helper.index = layer.index + 1
+    helper.index = 1000
     helper.draggable.enabled = true
     helper.draggable.momentum = false
     
@@ -84,7 +84,7 @@ exports.enable = (layer,circleCenterX,circleCenterY,radius) ->
             helper.width = layer.width
             helper.height = layer.height
             helper.rotation = layer.rotation
-            helper.index = layer.index + 1
+            helper.index = 1000
     
     
     # Updates
