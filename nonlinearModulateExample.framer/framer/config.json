@@ -1,8 +1,8 @@
 {
   "updateDelay" : 0.3,
-  "deviceScale" : -1,
+  "deviceScale" : 0.5,
   "deviceOrientation" : 0,
   "contentScale" : 1,
   "sharedPrototype" : 1,
-  "deviceType" : "fullscreen"
+  "deviceType" : "iphone-6-silver"
 }
