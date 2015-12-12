@@ -1,40 +1,35 @@
-## framer-nonlinearModulate
-‚nonlinearModulate‘ extends ‚Utils.modulate‘ with the ability to interpolate a value in a non-liniar way.
+## framer-constrainToCircle
+‚constrainToCircle‘ is a module that enables dragging for a layer and constrains its movement to a circle.
 
 
 #### Demo
 
-![gif](http://i.giphy.com/3o8dp4wXUMBJSGpesE.gif)
+![gif](http://i.giphy.com/3oEduEH7JgcM3Jh8sM.gif)
 
-*Live Demo*: http://share.framerjs.com/wd6zgrvhwfus/
+*Live Demo*: http://share.framerjs.com/z37yx6kb4mb7/
 
 
 #### Getting started
 
 ```CoffeeScript
-# Copy ‚nonlinearModulate.coffee’ into your project’s ‚modules‘-folder
+# Copy ‚constrainToCircle.coffee’ into your project’s ‚modules‘-folder
 
 # Include module
-require „nonlinearModulate“
+constrainToCircle = require „constrainToCircle“
 
-# Use it like the regular ‚Utils.modulate‘
-Utils.modulate(value, [a, a], [b, b], limit) # … linear, limit = false
-Utils.modulate(value, [a, a], [b, b], curve) # … curve, limit = false
-Utils.modulate(value, [a, a], [b, b], curve, limit) # … curve, limit = true/false
+# enables dragging for ‚layer‘ and constrains its movement to a circle
+constrainToCircle.enable(layer,circleCenterX,circleCenterY,radius)
 
-# accepted curve-types:
-#
-# linear
-# easeInQuad/ease-in, easeOutQuad/ease-out, easeInOutQuad/ease-in-out
-# easeInCubic, easeOutCubic, easeInOutCubic
-# easeInQuart, easeOutQuart, easeInOutQuart
-# easeInQuint, easeOutQuint, easeInOutQuint
-# easeInSine, easeOutSine, easeInOutSine
-# easeInExpo, easeOutExpo, easeInOutExpo
-# easeInCirc, easeOutCirc, easeInOutCirc
+# updates an existing constrainToCircle-layer
+constrainToCircle.update(layer,circleCenterX,circleCenterY,radius)
 
-# for a visual representation see: http://easings.net/en
+# disables dragging for ‚layer‘
+constrainToCircle.disable(layer)
 
-# easeElastic,easeBack, easeBounce are NOT implemented, yet
+# variables: values from the invisible ‚helper’-layer
+constrainToCircle.isDragging # returns true/false
+constrainToCircle.velocityX # returns float
+constrainToCircle.velocityY # returns float
+constrainToCircle.helper # returns ‚helper‘-layer
 
 ```
