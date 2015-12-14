@@ -2,11 +2,11 @@
 
 
 if (typeof(DeviceComponent) !== "undefined") {DeviceComponent.Devices["iphone-6-silver"].deviceImageJP2 = false};
-window.Framer.Defaults.DeviceView = {"deviceScale":0.5,"deviceType":"iphone-6-spacegray","contentScale":1,"orientation":0};
+window.Framer.Defaults.DeviceView = {"deviceScale":-1,"deviceType":"fullscreen","contentScale":1,"orientation":0};
 
-window.Framer.Defaults.DeviceComponent = {"deviceScale":0.5,"deviceType":"iphone-6-spacegray","contentScale":1,"orientation":0};
+window.Framer.Defaults.DeviceComponent = {"deviceScale":-1,"deviceType":"fullscreen","contentScale":1,"orientation":0};
 
-window.FramerStudioInfo = {"deviceImagesUrl":"\/_server\/resources\/DeviceImages","documentTitle":"nonlinearModulateExample.framer"};
+window.FramerStudioInfo = {"deviceImagesUrl":"\/_server\/resources\/DeviceImages","documentTitle":"constrainToCircleExample.framer"};
 
 Framer.Device = new Framer.DeviceView();
 Framer.Device.setupContext();
@@ -304,14 +304,8 @@ getLayerProperties = function(layer) {
   properties = {
     id: layer.id,
     name: layer.name || ((ref = layer.__framerInstanceInfo) != null ? ref.name : void 0) || (layer.constructor.name + " " + layer.id),
-    superLayer: null,
-    __framerInstanceInfo: layer.__framerInstanceInfo
+    superLayer: null
   };
-  if (properties.__framerInstanceInfo == null) {
-    properties.__framerInstanceInfo = {
-      hash: "#il|" + layer.__framerImportedFromPath + "|" + properties.name
-    };
-  }
   _.extend(properties, _.pick(layer, ["x", "y", "z", "index", "width", "height", "scale", "opacity", "rotationX", "rotationY", "rotationZ", "blur"]));
   if (properties.visible === false) {
     properties.visibleResult = false;
@@ -640,17 +634,6 @@ Runtime = (function(superClass) {
         });
       });
     }
-    Framer.Importer.load = function(path) {
-      var importer, layer, layers, name;
-      importer = new Framer.Importer(path);
-      layers = importer.load();
-      for (name in layers) {
-        layer = layers[name];
-        layer.__framerImportedFromPath = path;
-        layer;
-      }
-      return layers;
-    };
     bridge.send("runtime.init");
     return this._errorHandlerSetup();
   };
