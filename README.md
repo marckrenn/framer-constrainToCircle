@@ -1,35 +1,41 @@
-## framer-constrainToCircle
-‚constrainToCircle‘ is a module that enables dragging for a layer and constrains its movement to a circle.
+## framer-nonlinearModulate
+‚nonlinearModulate’ extends ‚Utils.modulate‘ with the ability to interpolate a value in a non-linear way.
 
 
 #### Demo
 
-![gif](http://i.giphy.com/3oEduEH7JgcM3Jh8sM.gif)
+![gif](http://i.giphy.com/d2YW1MQy30hoZdMQ.gif)
 
-*Live Demo*: http://share.framerjs.com/z37yx6kb4mb7/
+*Live Demo*: http://share.framerjs.com/ob5c22zymlzt/
 
 
 #### Getting started
 
 ```CoffeeScript
-# Copy ‚constrainToCircle.coffee’ into your project’s ‚modules‘-folder
+# Copy ‚nonlinearModulate.coffee’ into your project’s ‚modules‘-folder
 
 # Include module
-constrainToCircle = require „constrainToCircle“
+require „nonlinearModulate“
 
-# enables dragging for ‚layer‘ and constrains its movement to a circle
-constrainToCircle.enable(layer,circleCenterX,circleCenterY,radius)
+# Use it it like a regular Utils.modulate()
+# Syntax:
+# Utils.modulate(value, [a, a], [b, b], limit) ... linear, limit = false
+# Utils.modulate(value, [a, a], [b, b], curve) ... curve, limit = false
+# Utils.modulate(value, [a, a], [b, b], curve, limit) ... curve, limit = true/false
+# Utils.modulate(value, [a, a], [b, b], curve, limit, easeBackMultiplier) ... curve, limit = true/false, easeBackMultiplier (default: 1.70158)
 
-# updates an existing constrainToCircle-layer
-constrainToCircle.update(layer,circleCenterX,circleCenterY,radius)
-
-# disables dragging for ‚layer‘
-constrainToCircle.disable(layer)
-
-# variables: values from the invisible ‚helper’-layer
-constrainToCircle.isDragging # returns true/false
-constrainToCircle.velocityX # returns float
-constrainToCircle.velocityY # returns float
-constrainToCircle.helper # returns ‚helper‘-layer
+# Accepted curve-types (see: http://easings.net/en):
+#
+# linear
+# easeInSine, easeOutSine, easeInOutSine
+# easeInQuad/ease-in, easeOutQuad/ease-out, easeInOutQuad/ease-in-out
+# easeInCubic, easeOutCubic, easeInOutCubic
+# easeInQuart, easeOutQuart, easeInOutQuart
+# easeInQuint, easeOutQuint, easeInOutQuint
+# easeInExpo, easeOutExpo, easeInOutExpo
+# easeInCirc, easeOutCirc, easeInOutCirc
+# easeInBack, easeOutBack, easeInOutBack
+# easeInElastic, easeOutElastic, easeinOutElastic*
+# easeInBounce, easeOutBounce, easeInOutBounce
 
 ```
